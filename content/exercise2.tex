@@ -1,0 +1,342 @@
+\exercise{2\textbar 1}{ABC-Analyse}
+Marlene musste sich heute Morgen bei Herrn Bautzen, dem Leiter der Logistikabteilung, melden.  
+Marlene bekommt folgende Informationen:  
+\textit{„Bevor unsere Kaffeemaschinen überhaupt produziert werden können, müssen die benötigten Bauteile beschafft und gelagert werden. Für die Beschaffung der benötigten Teile sowie für die Preisverhandlungen mit unseren Lieferanten ist unsere Abteilung Einkauf zuständig.“}
+\\~\\
+Während Herr Bautzen redet, läuft er mit Marlene einen langen Flur entlang.  
+Sie bleiben vor einer Tür stehen.  
+\textit{„Deswegen werden Sie heute einen Tag im Einkauf erleben dürfen.“} Herr Bautzen klopft an und tritt schnurstracks in den Raum ein.  
+\textit{„Hallo Frau Carlsen, ich bringe Ihnen unsere Praktikantin.“}  
+\textit{„Guten Morgen, Frau Schuberth. Ich heiße Anne Carlsen und bin hier im Einkauf für unsere Basic-Line-Produktlinie zuständig.“}  
+Marlene erinnert sich: Die OHM GmbH hat zwei Produktlinien. Die Basic Line produziert Vollautomaten für kleine Betriebe, Büros oder Meetingräume. Daneben existiert die Premium Line für Coffeeshops, Hotels und Restaurants.  
+\\~\\
+\textit{„Setzen Sie sich bitte. Ich lasse gerade eine Verbrauchsstatistik aus unserem ERP-System. Einmal im Quartal überprüfen wir unseren Materialverbrauch für die Basic Line. Die Materialteile klassifizieren wir anhand einer ABC-Analyse. Dies dient uns dann als Grundlage für Preisverhandlungen mit den Lieferanten sowie zur Prozessoptimierung unseres C-Artikel-Managements. Die Einteilung unserer Materialien erfolgt nach den Wertgrenzen 80/15/5.“}  
+\\~\\
+Frau Carlsen gibt Marlene einen Ausdruck in die Hand.  
+\textit{„Ich muss nun leider zu einem Meeting. Bitte erarbeiten Sie doch in der Zwischenzeit die Analyse für mich. Wir werden das Ganze dann später zusammen besprechen.“}
+\\~\\
+\textbf{Aufgabe:}  
+Erstellen Sie eine ABC-Analyse mit den vorgegebenen Verbrauchsdaten (siehe folgende Tabelle).  
+Welche Beschaffungsverfahren wären für die einzelnen Materialklassen geeignet?
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{|c|c|X|c|c|}
+\hline
+\textbf{Nr.} & \textbf{Materialnummer} & \textbf{Beschreibung} & \textbf{Verbrauchsmenge} & \textbf{Preis/Stück (€)} \\
+\hline
+1 & 4052046 & Durchlauferhitzer & 167 & 375,00 \\
+2 & 5400244 & Wasserpumpe & 237 & 33,00 \\
+3 & 1169047 & Mahlwerk & 175 & 323,00 \\
+4 & 2214047 & Dampfventil & 184 & 47,00 \\
+5 & 2314043 & Brühsieb & 3.500 & 1,80 \\
+6 & 3240127 & Antriebsmotor & 135 & 287,00 \\
+7 & 6320442 & Dichtung & 4.800 & 0,75 \\
+8 & 6214590 & Fluidschlauch & 3.500 & 1,55 \\
+9 & 1324530 & Mahlscheibe & 350 & 18,00 \\
+10 & 2764412 & Thermostat & 215 & 42,00 \\
+\hline
+\end{tabularx}
+\end{table}
+
+\solution{
+\textbf{Lösung:}
+
+Für die ABC-Analyse wird der Gesamtwert jedes Materials (Verbrauchsmenge $\times$ Preis pro Stück) berechnet. Anschließend werden die Materialien absteigend nach ihrem Gesamtwert sortiert und die kumulierten Anteile am Gesamtwert berechnet.
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{|X|c|c|c|c|c|c|}
+\hline
+\textbf{Nr.} & \textbf{Verbrauch} & \textbf{Preis (€)} & \textbf{Gesamtwert (€)} & \textbf{Kumul. Wert (€)} & \textbf{Kumul. \%} & \textbf{Klasse} \\
+\hline
+1 & 167 & 375,00 & 62.625,00 & 62.625,00 & 31 & A \\
+3 & 175 & 323,00 & 56.525,00 & 119.150,00 & 58 & A \\
+6 & 135 & 287,00 & 38.745,00 & 157.895,00 & 77 & A \\
+10 & 215 & 42,00 & 9.030,00 & 166.925,00 & 81 & B \\
+4 & 184 & 47,00 & 8.648,00 & 175.573,00 & 86 & B \\
+2 & 237 & 33,00 & 7.821,00 & 183.394,00 & 89 & B \\
+5 & 3.500 & 1,80 & 6.300,00 & 189.694,00 & 93 & B \\
+9 & 350 & 18,00 & 6.300,00 & 195.994,00 & 96 & C \\
+8 & 3.500 & 1,55 & 5.425,00 & 201.419,00 & 98 & C \\
+7 & 4.800 & 0,75 & 3.600,00 & 205.019,00 & 100 & C \\
+\hline
+\end{tabularx}
+\end{table}
+
+Die Materialien werden wie folgt klassifiziert:
+\begin{itemize}
+    \item \textbf{A-Materialien:} Durchlauferhitzer, Mahlwerk, Antriebsmotor (80\% des Gesamtwerts).
+    \item \textbf{B-Materialien:} Wasserpumpe, Thermostat, Dampfventil (15\% des Gesamtwerts).
+    \item \textbf{C-Materialien:} Alle übrigen Materialien (5\% des Gesamtwerts).
+\end{itemize}
+
+\textbf{Geeignete Beschaffungsverfahren:}
+\begin{itemize}
+    \item \textbf{A-Materialien:} Sorgfältige Verhandlungen, Rahmenverträge und Just-in-Time-Beschaffung.
+    \item \textbf{B-Materialien:} Regelmäßige Überprüfung der Bestände und Mengenrabatte.
+    \item \textbf{C-Materialien:} Einmalbestellungen in großen Mengen zur Reduzierung der Beschaffungskosten.
+\end{itemize}
+}
+
+
+\exercise{2\textbar 2}{Optimale Bestellmenge}
+Die \textbf{OHM GmbH} testet ihre Maschinen kontinuierlich und das ganze Jahr über.  
+Dafür werden \textbf{Kaffeebohnen von der italienischen Firma Illy} auf Vorrat gekauft.  
+Die \textbf{jährliche Nachfrage} liegt bei \textbf{2.500 Tonnen}.  
+Pro Bestellung fallen \textbf{Kosten in Höhe von 20,00 €} an.  
+Die \textbf{Lagerhaltungskosten} belaufen sich auf \textbf{1,00 € pro Tonne Kaffee}.  
+Marlene soll heute die \textbf{optimale Bestellmenge} berechnen.  
+\\~\\
+\textbf{Aufgabe:}
+\begin{itemize}
+    \item Helfen Sie Marlene, die \textbf{optimale Bestellmenge} zu berechnen. (Runden Sie auf drei Stellen hinter dem Komma!)
+    \item Lösen Sie die Aufgabe \textbf{grafisch}.
+    \item Tragen Sie an der \textbf{x-Achse} die \textbf{Bestellmenge Q} ab.
+\end{itemize}
+
+\solution{
+
+Die optimale Bestellmenge $Q_{opt}$ kann mit der Andler-Formel berechnet werden:
+\[
+Q_{opt} = \sqrt{\frac{2 \cdot D \cdot K}{h}}
+\]
+\begin{itemize}
+    \item \textbf{D:} Jährliche Nachfrage = $2.500$ Tonnen
+    \item \textbf{K:} Bestellkosten pro Bestellung = $20,00 \;€$
+    \item \textbf{h:} Lagerhaltungskosten pro Tonne = $1,00 \;€$
+\end{itemize}
+
+\textbf{Berechnung:}
+\[
+Q_{opt} = \sqrt{\frac{2 \cdot 2.500 \cdot 20}{1}} = \sqrt{100.000} = 316,228
+\]
+Die optimale Bestellmenge beträgt \textbf{316,228 Tonnen}.
+
+}
+
+\exercise{2\textbar 3}{Optimale Bestellmenge}
+Die \textbf{Gr\"uger Maschinenbau GmbH} hat ein Projekt zur Optimierung der Logistik gestartet.  
+Im Rahmen dieses Projekts sollen auch die \textbf{Bestell- bzw. Losgr\"o\ss{}en} in der Produktion optimiert werden.  
+Am Beispiel \textbf{zweier Teile} soll die Berechnung durchgef\"uhrt werden.
+
+\begin{itemize}
+    \item \textbf{Teil 1}: \\ 
+    Es handelt sich um ein \textbf{Gussteil}, das von der Hauser Gu\ss{} AG bezogen wird. Eine Prozesskostenrechnung hat ergeben, dass eine Bestellung in den Abteilungen Einkauf und Wareneingang \textbf{Kosten in H\"ohe von 645 €} verursacht. Pro Jahr werden insgesamt \textbf{425 Gussteile} verbraucht. Die gesamten Lagerkosten betragen f\"ur das Gussteil \textbf{750 €} pro Jahr.
+    \item \textbf{Teil 2}: \\ 
+    Es handelt sich um ein \textbf{Stanzteil}, das als Motorhalterung verwendet wird, jedoch im eigenen Betrieb hergestellt wird. Die \textbf{Umr\"ustkosten der Presse} f\"ur die Motorhalterung wurden aufgrund einer Analyse mit \textbf{1.234 €} berechnet. Pro Jahr werden \textbf{560 Motorhalterungen} ben\"otigt. Die gesamten Lagerkosten f\"ur das Teil 2 betragen \textbf{9.450  €} pro Jahr.
+\end{itemize}
+\noindent
+\textbf{Aufgabe:}
+\begin{itemize}
+    \item Berechnen Sie die \textbf{optimale Losgr\"o\ss{}e bzw. Bestellmenge} f\"ur beide Teile. (Runden Sie auf drei Stellen hinter dem Komma!)
+\end{itemize}
+
+\solution{
+Die optimale Bestellmenge (Economic Order Quantity, EOQ) kann mit der Andler-Formel berechnet werden:
+\[
+EOQ = \sqrt{\frac{2 \cdot D \cdot K}{H}}
+\]
+Dabei gilt:
+
+D = Jährlicher Bedarf, \quad K = Bestellkosten/Umrüstkosten pro Bestellung, \quad H = Lagerhaltungskosten pro Jahr
+
+\textbf{Teil 1 (Gussteil):}
+
+\[
+D = 425, \quad K = 645 \,€, \quad H = 750 \,€
+\]
+\[
+EOQ = \sqrt{\frac{2 \cdot 425 \cdot 645}{750}}
+\]
+\[
+EOQ = \sqrt{731}
+\]
+\[
+EOQ = 27,037
+\]
+Die optimale Bestellmenge für Teil 1 beträgt \textbf{27 Stück}.
+
+\textbf{Teil 2 (Stanzteil):}
+
+\[
+D = 560, \quad K = 1.234 \,€, \quad H = 9.450 \,€
+\]
+\[
+EOQ = \sqrt{\frac{2 \cdot 560 \cdot 1.234}{9.450}}
+\]
+\[
+EOQ = \sqrt{146,25}
+\]
+\[
+EOQ = 12,09
+\]
+Die optimale Losgröße für Teil 2 beträgt \textbf{12 Stück}.
+}
+
+\exercise{2\textbar4}{Optimale Bestellmenge}
+
+In einer Abteilungsleitersitzung fordert der Leiter der Produktion vehement eine Vergrößerung des Rohstofflagers, während jener der Beschaffung und Lagerhaltung für einen Abbau des durchschnittlichen Lagerbestandes plädiert.
+
+\begin{enumerate}[label=\textbf{\alph*)}]
+    \item \textbf{Begründen Sie die Forderungen der beiden Abteilungsleiter.}
+    \item \textbf{Wie kann dieses Problem gelöst werden?}
+    \item \textbf{Welcher Abteilungsleiter wird sich bei dieser Diskussion auch noch zu Wort melden und warum?}
+\end{enumerate}
+
+\solution{
+
+\textbf{Lösung:}
+
+\textbf{a) }
+
+\textbf{Abteilungsleiter Produktion:} Er wünscht eine möglichst hohe Sicherheit durch ein großes Lager, um eine ununterbrochene Produktion gewährleisten zu können.
+
+\textbf{Abteilungsleiter Beschaffung und Lagerhaltung:} Er setzt sich für eine Verminderung des Lagers ein, um die Kapitalkosten zu senken und den Lagerbestand den vorhandenen Räumlichkeiten anzupassen.
+
+\textbf{b) }
+
+Wichtig ist die Berechnung der optimalen Bestellmenge und die Wahl eines geeigneten Bestellsystems, das der Sicherheit Rechnung trägt (Sicherheitsbestand).
+
+Eine weitere Möglichkeit ist die Einführung der Just-in-Time-Produktion, die kein Lager mehr erfordert, dafür aber neue Unsicherheiten und Probleme mit sich bringt (z. B. Produktionsverzögerungen bei Lieferschwierigkeiten).
+
+\textbf{c) }
+
+\textbf{Abteilungsleiter Finanzen:} Er tritt für eine möglichst kleine Kapitalbindung in den Lagern ein, um die Liquidität so wenig als möglich zu beanspruchen.
+
+\textbf{Abteilungsleiter Marketing:} Er ist an einer hohen Lieferbereitschaft interessiert.
+
+}
+
+\exercise{2\textbar5}{Optimale Bestellmenge}
+\begin{enumerate}[label=\alph*)]
+    \item Welche Annahmen liegen dem Modell der optimalen Bestellmenge zugrunde?
+    \item Wie ist das Modell der optimalen Bestellmenge in Bezug auf den Einsatz in der Praxis zu beurteilen?
+\end{enumerate}
+
+\solution{
+    \subsection*{a)}
+
+    \begin{itemize}
+        \item Die Beschaffungsmenge kann in gleichbleibende Bestellmengen während der Planperiode aufgeteilt werden.
+        \item Die Lagerabgangsraten und damit der Bedarf bleiben konstant.
+        \item Die Einstandspreise sind weder von der Bestellmenge noch vom Bestellzeitpunkt abhängig.
+        \item Die fixen Kosten pro Bestellung sowie der Zins- und Lagerkostensatz sind genau bestimmbar und verändern sich während der Planperiode nicht.
+    \end{itemize}
+
+    \subsection*{b) }
+
+    \textbf{Unter die unternehmensbedingten Restriktionen fallen:}
+    \begin{itemize}
+        \item Lagerfähigkeit der Produkte
+        \item Beschaffungssicherheit
+        \item vorhandenes Kapital
+        \item Lagerkapazität
+        \item fertigungsbedingte Gegebenheit durch die Produktion (technische Höchstbestellmenge)
+    \end{itemize}
+
+    \textbf{Bei den von den Lieferanten vorgegebenen Restriktionen kommen in Betracht:}
+    \begin{itemize}
+        \item Mindest- und Höchstmengen
+        \item Verpackungseinheiten
+        \item Fertigungseinheiten
+        \item Preisstaffelungen
+    \end{itemize}
+
+    \textbf{Transportbedingte und gesetzliche Restriktionen gehen häufig Hand in Hand:}
+    \begin{itemize}
+        \item Gesetzlich geregelte Transportarten für einzelne Materialien
+        \item mögliche Transporteinheiten
+        \item Be- und Entlademöglichkeiten der Transportbehälter
+    \end{itemize}
+}
+
+\exercise{2\textbar6}{Kennzahlen zur Beschaffungs-/Lagerplanung und -kontrolle}
+Bei der Herstellung von Kartonschachteln im vergangenen Jahr ergaben sich im Zusammenhang mit der Lagerhaltung folgende Daten:
+
+\begin{enumerate}
+    \item Anforderungen (Bestellungen) aus der Produktionsabteilung:
+    \begin{itemize}
+        \item Anzahl Anforderungen: 1.000
+        \item davon sofort ausgeführt: 995
+        \item mengenmäßige Anforderungen: 1.000.000
+        \item davon sofort ausgeführt: 900.000
+    \end{itemize}
+    
+    \item Anfangsbestand des Lagers: 100.000 Einheiten\\
+          Endbestand des Lagers: 100.000 Einheiten
+    
+    \item Preis/Einheit: 2 €
+\end{enumerate}
+
+\begin{enumerate}[label=\alph*)]
+    \item Interpretieren Sie die Daten der Lagerhaltung für das vergangene Jahr.
+    \item Berechnen Sie folgende Kennziffern:
+    \begin{itemize}
+        \item Anforderungsbereitschaftsgrad
+        \item Mengenbereitschaftsgrad
+        \item durchschnittlicher Lagerbestand
+        \item Lagerumschlagshäufigkeit
+        \item durchschnittliche Lagerdauer
+    \end{itemize}
+    \item Interpretieren Sie die berechneten Kennziffern.
+\end{enumerate}
+
+\solution{
+\textbf{a) Interpretation der Lagerhaltungsdaten:} \\
+Die Analyse zeigt, dass einige größere Bestellungen (maximal fünf) im Umfang von insgesamt 100.000 Einheiten nicht sofort ausgeführt werden konnten. Dies deutet auf mögliche Engpässe in der Lieferkette hin, die analysiert und behoben werden sollten.
+
+\textbf{b) Berechnung der Kennzahlen:} \\
+\textbf{Lieferbereitschaftsgrad:}
+\[
+Anforderungsbereitschaftsgrad = \frac{\mathrm{Anzahl \, sofort \, ausgeführter \, Anforderungen}}{\mathrm{Anzahl \, Anforderungen \, pro \, Jahr}} = \frac{995}{1.000} = 99,5\%
+\]
+\[
+\mathrm{Mengenbereitschaftsgrad} = \frac{\mathrm{Sofort \, ausgelieferte \, Mengen}}{\mathrm{Gesamt \, angeforderte \, Mengen}} = \frac{900.000}{1.000.000} = 90\%
+\]
+
+\textbf{Durchschnittlicher Lagerbestand:}
+\[
+\mathrm{Durchschnittlicher \, Lagerbestand} = \frac{\mathrm{Anfangsbestand} + \mathrm{Endbestand}}{2} = \frac{100.000 + 100.000}{2} = 100.000 \, \mathrm{Einheiten}
+\]
+\textit{Der durchschnittliche Lagerbestand hat einen Wert von 200.000 € (bei 2 € pro Einheit).}
+
+\textbf{Lagerumschlagshäufigkeit:}
+\[
+\mathrm{Lagerumschlagshäufigkeit} = \frac{\mathrm{Lagerabgang \, pro \, Jahr}}{\mathrm{Durchschnittlicher \, Lagerbestand}} = \frac{1.000.000}{100.000} = 10
+\]
+
+\textbf{Durchschnittliche Lagerdauer:}
+\[
+\mathrm{Durchschnittliche \, Lagerdauer} = \frac{\mathrm{Zahl \, der \, Tage \, pro \, Periode}}{\mathrm{Lagerumschlagshäufigkeit}} = \frac{360}{10} = 36 \, \mathrm{Tage}
+\]
+
+\textbf{c) Interpretation der berechneten Kennzahlen:}
+\begin{itemize}
+    \item Eine genaue Interpretation der Kennziffern ohne Konkurrenz- und Branchenvergleichszahlen ist nicht möglich.
+    \item Aus der Differenz zwischen dem Anforderungs- und dem Mengenbereitschaftsgrad lässt sich schließen, dass die Bestellmengen pro Anforderung stark schwanken und die Lagerabgangsrate somit sehr diskontinuierlich verläuft.
+    \item Deshalb ist auch ein relativ hoher durchschnittlicher Lagerbestand notwendig.
+    \item Es wäre zu untersuchen, ob die Mengenanforderungen der Produktion nicht geglättet werden könnten, d. h. gleichmäßiger verteilt, um die hohen Lagerhaltungskosten zu senken.
+\end{itemize}
+}
+\exercise{2\textbar7}{Zu hohe Lagerbestände in der Praxis}
+Welche Gründe führen in der Praxis dazu, dass in vielen Unternehmen die Lagerbestände zu hoch sind?
+
+
+\solution{
+In der Praxis kann es aus verschiedenen Gründen zum Aufbau zu hoher Lagerbestände kommen:
+\begin{itemize}
+    \item Die fertigungs\-synchrone Beschaffung scheitert häufig an den Lieferanten. Somit wird Lagerhaltung aus Sicherheitsgründen unverzichtbar.
+    \item Viele Unternehmen bauen zur \textbf{Vermeidung von Konventionalstrafen} bei Nichteinhaltung der Liefertermine hohe Lager auf.
+    \item Teils liegt die Ursache für Lagerhaltung in der Lagerverwaltung. Aufgrund mangelhafter Genauigkeit in der Erfassung der Lagerbestände würde eine Minimierung der Lager die Fehlmengen\-kosten erhöhen.
+    \item Eine \textbf{Just-in-Time-Produktion} erfordert Planungsgenauigkeit bezüglich Beschaffungsdaten und Produktionsprogramm. Viele Unternehmen sind aufgrund ihrer ineffizienten Produktions\-planung nicht in der Lage, Just-in-Time zu produzieren.
+    \item Standardisierte und häufig eingesetzte Teile werden teilweise auf Vorrat beschafft (sowohl bei Einzel- als auch bei Mehrfachfertigungssystemen).
+    \item Lagerhaltung ist für \textbf{Notfälle} für die meisten Unternehmen unverzichtbar, da mitunter Schwierigkeiten bei der Schätzung der Bedarfsmenge auftreten.
+    \item Weiter halten viele Unternehmen \textbf{Sicherheits- und Reservelager}, um Unsicherheiten des Beschaffungs- und Absatzmarktes auszugleichen.
+    \item \textbf{Spekulative Lagerhaltung} wird von vielen Unternehmen betrieben, um Preisänderungen auf den Beschaffungs\-märkten vorzubeugen.
+    \item Bestimmte Güter können nur zu bestimmten Zeitpunkten beschafft werden. In solchen Fällen bietet sich \textbf{antizipative und saisonale Lagerhaltung} an.
+\end{itemize}
+}
+

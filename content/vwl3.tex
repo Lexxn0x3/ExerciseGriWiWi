@@ -1,0 +1,137 @@
+\exercise{3\textbar 2}{Xetra-Handel: Bubble-Tech Aktie}
+Zu einem Auktionszeitpunkt im Xetra-Handel liegen für die Aktie der Bubble-Tech folgende Orders vor:
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|l|c|c|}
+        \hline
+        \textbf{Käufer} & \textbf{Kauforder Stück/Kurs} & \textbf{Verkaufsorder Stück/Kurs} \\
+        \hline
+        Herr Meier & 100 billigst & - \\
+        Herr Müller & - & 30 zu 6 \\
+        Frau Schmidt & 90 zu 4 & - \\
+        Herr Reibach & - & 80 zu 7 \\
+        Frau Klein & 80 zu 5 & - \\
+        Frau Himmeltreu & 50 zu 6 & - \\
+        Herr Gehlen & - & 70 zu 5 \\
+        Frau Becker & 40 zu 7 & - \\
+        Herr Frey & - & 30 zu 4 \\
+        \hline
+    \end{tabular}
+    \caption{Orders für Bubble-Tech Aktie}
+    \label{tab:orders_bubble_tech}
+\end{table}
+
+\begin{enumerate}[label=(\alph*)]
+    \item Erstellen Sie auf der Grundlage der obigen Aufträge ein Orderbuch!
+    \item Bestimmen Sie die angebotene und die nachgefragte Menge bei unterschiedlichen Kursniveaus!
+    \item Ermitteln Sie die zu den einzelnen Kursniveaus gehandelten Stückzahlen sowie die sich jeweils hieraus ergebenden Nachfrage- und Angebotsüberhänge! Wo liegt der markträumende Preis?
+    \item Berechnen Sie den „Handelsgewinn“, den jeder einzelne Marktteilnehmer für sich verbuchen kann! Gehen Sie davon aus, dass der Wert immer um eine Einheit unter dem Verkaufspreis bzw. über dem Kaufpreis liegt. Für Gebote mit billigst oder bestens kann der Gewinn nicht ermittelt werden.
+\end{enumerate}
+
+\solution{
+
+\begin{enumerate}[label=(\alph*)]
+    \item \textbf{Orderbuch:}
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|}
+            \hline
+            \textbf{Nachfrage (Käufer)} & \textbf{St\"uck} & \textbf{Preis} & \textbf{Summe} \\
+            \hline
+            Meier & 100 & billigst & 100 \\
+            Becker & 40 & 7 & 140 \\
+            Himmeltreu & 50 & 6 & 190 \\
+            Klein & 80 & 5 & 270 \\
+            Schmidt & 90 & 4 & 360 \\
+            \hline
+        \end{tabular}
+        \quad
+        \begin{tabular}{|c|c|c|c|}
+            \hline
+            \textbf{Angebot (Verkäufer)} & \textbf{St\"uck} & \textbf{Preis} & \textbf{Summe} \\
+            \hline
+            Hinterhuber & 75 & bestens & 75 \\
+            Frey & 30 & 4 & 105 \\
+            Gehlen & 70 & 5 & 175 \\
+            Müller & 30 & 6 & 205 \\
+            Reibach & 80 & 7 & 285 \\
+            \hline
+        \end{tabular}
+        \caption{Orderbuch für Nachfrage und Angebot}
+        \label{tab:orderbuch}
+    \end{table}
+
+    \item \textbf{Aggregierte Nachfrage und Angebot:}
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|}
+            \hline
+            \textbf{Kursniveau} & \textbf{Aggregierte Nachfrage} & \textbf{Aggregiertes Angebot} \\
+            \hline
+            Unter 4 & 360 & 75 \\
+            4 & 360 & 105 \\
+            5 & 270 & 175 \\
+            6 & 190 & 205 \\
+            7 & 140 & 285 \\
+            Über 7 & 100 & 285 \\
+            \hline
+        \end{tabular}
+        \caption{Aggregierte Nachfrage und Angebot nach Kursniveau}
+        \label{tab:aggregiert}
+    \end{table}
+
+    \item \textbf{Gehandelte Volumen und Überhänge:}
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|}
+            \hline
+            \textbf{Kursniveau} & \textbf{Gehandeltes Volumen} & \textbf{Nachfrageüberhang} & \textbf{Angebotsüberhang} \\
+            \hline
+            Unter 4 & 75 & 285 & - \\
+            4 & 105 & 255 & - \\
+            5 & 175 & 95 & - \\
+            6 & 190 & - & 15 \\
+            7 & 140 & - & 145 \\
+            Über 7 & 100 & - & 185 \\
+            \hline
+        \end{tabular}
+        \caption{Gehandeltes Volumen und Überhänge}
+        \label{tab:volumen_ueberhaenge}
+    \end{table}
+    Der markträumende Preis liegt bei einem Kursniveau von \textbf{6}.
+
+    \item \textbf{Handelsgewinn:}
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|}
+            \hline
+            \textbf{Nachfrageseite} & \textbf{Vorbehaltspreis} & \textbf{Marktpreis} & \textbf{Rente/St\"uck} & \textbf{Konsumentenrente} \\
+            \hline
+            Meier & billigst & 6 & - & - \\
+            Becker & 7 & 6 & 1 & 40 \\
+            Himmeltreu & 6 & 6 & 0 & 0 \\
+            Klein & - & - & - & -\\
+            Schmidt & - & 6 & - & -\\
+            Summe & - & - & - & 40 \\
+            \hline
+        \end{tabular}
+        \quad
+        \begin{tabular}{|c|c|c|c|c|}
+            \hline
+            \textbf{Angebotsseite} & \textbf{Vorbehaltspreis} & \textbf{Marktpreis} & \textbf{Rente/St\"uck} & \textbf{Produzentenrente} \\
+            \hline
+            Hinterhuber & bestens & 6 & - & - \\
+            Frey & 4 & 6 & 2 & 60 \\
+            Gehlen & 5 & 6 & 1 & 70 \\
+            Müller & 6 & 6 & 0 & 0 \\
+            Summe & - & - & - & 130\\
+            \hline
+        \end{tabular}
+        \caption{Handelsgewinne}
+        \label{tab:handelsgewinne}
+    \end{table}
+    Die Gesamtkonsumentenrente beträgt \textbf{40} und die Produzentenrente \textbf{130}.
+\end{enumerate}
+}
+

@@ -1,0 +1,101 @@
+\documentclass[a4paper,11pt]{article}
+
+% Encoding and language
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{german}
+\setmainfont{Libertinus Serif} % Modern serif font
+\setsansfont{Fira Sans} % Modern sans-serif font
+\setmonofont{Fira Code} % Monospaced font for code or numbers
+\usepackage{float} % Add this to the preamble
+% Geometry and spacing
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{setspace}
+\usepackage{tabularx}
+\setstretch{1.15} % Line spacing for better readability
+\usepackage{graphicx}
+\usepackage{amsmath}
+%-----------------------CONFIG----------------------------------------------------------------------------
+% Configuration section
+\newcommand{\ProfessorName}{Prof. Dr. Michael Lang} % Professor name
+\newcommand{\LectureName}{Grundlagen der Wirtschaftswissenschaften} % Lecture name
+\newcommand{\DocumentDate}{\today} % Date
+%------------------------------------------------------------------------------------------------------------------------------
+
+% Fancy headers and footers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textbf{\LectureName}} % Header left
+\fancyhead[R]{\textbf{Seite \thepage}} % Header right
+
+% Custom section formatting
+\usepackage{titlesec}
+\titleformat{\section}{\sffamily\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\sffamily\bfseries}{\thesubsection}{1em}{}
+
+% Enumerations and lists
+\usepackage{enumitem}
+\setlist[itemize,enumerate]{topsep=0.5em, itemsep=0.3em, parsep=0em, left=0pt}
+
+% Fancy tables
+\usepackage{array,booktabs}
+\renewcommand{\arraystretch}{1.2} % More space between rows
+
+% Color and links
+\usepackage[dvipsnames]{xcolor}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=MidnightBlue,
+  urlcolor=RoyalBlue,
+  pdftitle={\LectureName},
+}
+
+
+
+% Custom commands for exercises and solutions
+\newcommand{\exercise}[2]{
+  \subsection*{\sffamily Aufgabe #1: #2}
+}
+\newcommand{\solution}[1]{
+  \vspace{0.5em}
+  \noindent
+  \textbf{Lösung:}
+  \begin{flushleft}
+    \color{MidnightBlue} #1
+  \end{flushleft}
+  \vspace{1em}
+}
+
+\newcommand{\note}[1]{
+  \textcolor{red}{\textit{#1}}
+}
+
+% Document begins
+\begin{document}
+
+\section*{\sffamily \LectureName}
+\textbf{Dozent/in:} \ProfessorName \\
+\textbf{Datum:} \DocumentDate
+\vspace{1em}
+
+\hrule
+\vspace{1em}
+
+% Include exercises and solutions from external files
+\input{content/exercise1.tex}
+\input{content/exercise2.tex}
+\input{content/exercise3.tex}
+\input{content/exercise4.tex}
+\input{content/exercise5.tex}
+\input{content/exercise6.tex}
+\input{content/exercise7.tex}
+\input{content/exercise8.tex}
+\input{content/exercise9.tex}
+\input{content/vwl1.tex}
+\input{content/vwl3.tex}
+\input{content/vwl4.tex}
+
+\end{document}
+
